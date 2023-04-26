@@ -9,6 +9,14 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+
+conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <1 2>;
+            then-layer = <3>;
+        };
+    };
         keymap {
                 compatible = "zmk,keymap";
 
@@ -29,12 +37,12 @@
 // -----------------------------------------------------------------------------------------
 // | NULL |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | NULL |
 // | NULL | MUTE|VOLUP|  `  |  -  |  =  |   |  ;  |  '  |     |     |     | NULL |
-// | NULL |     |VOLDO|  [  |  ]  |  \  |   |  ,  |  .  |  /  |     |     | NULL |
+// | NULL | ESC |VOLDO|  [  |  ]  |  \  |   |  ,  |  .  |  /  |     |     | NULL |
 //                    | SHIFT | NULL | SPC |   | ENT | NULL  | ALT |
                         bindings = <
    &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
    &bt BT_CLR &kp C_MUTE &kp C_VOL_UP &kp GRAVE &kp MINUS &kp EQUAL &kp SEMI   &kp APOS &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &trans
-   &kp LSHFT  &trans       &kp C_VOL_DN     &kp LBKT    &kp RBKT    &kp BSLH         &kp COMMA   &kp DOT   &kp SLASH &trans    &bt BT_CLR &trans
+   &kp LSHFT  &kp ESC       &kp C_VOL_DN     &kp LBKT    &kp RBKT    &kp BSLH         &kp COMMA   &kp DOT   &kp SLASH &trans    &bt BT_CLR &trans
                                     &kp LSHFT &trans &kp SPACE   &kp RET &trans &kp RALT
                         >;
                 };
@@ -52,5 +60,14 @@
                               &kp LSHFT &trans &kp SPACE   &kp RET &trans &kp RALT
                         >;
                 };
+                
+                tri_layer {
+                        bindings = <
+                        &trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4  &trans &trans &trans &trans &trans &trans
+                        &trans &trans &trans &trans &trans &trans                                &trans &trans &trans &trans &trans &trans
+                        &bt BT_CLR &trans &trans &trans &trans &trans                                &trans &trans &trans &trans &trans &trans
+                                             &trans &trans &trans                                &trans &trans &trans
+                         >;
+                 };
         };
 };

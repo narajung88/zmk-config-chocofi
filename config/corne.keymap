@@ -10,7 +10,6 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
-/ {
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
@@ -19,6 +18,8 @@
         };
     };
 };
+
+/ {
         keymap {
                 compatible = "zmk,keymap";
 

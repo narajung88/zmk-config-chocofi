@@ -10,14 +10,6 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
-        };
-    };
-
         keymap {
                 compatible = "zmk,keymap";
 
@@ -26,12 +18,12 @@
 // | NULL |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | NULL |
 // | NULL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  | BKSP| NULL |
 // | NULL | CTRL|  Z  |  X  |  C  |  V  |   |  B  |  N   |  M  | TAB |RIGHT| NULL  |
-//                    | SHIFT | LWR | SPC |   | ENT | RSE  | ALT |
+//                    | SHIFT | LWR | SPC |   | L3/ENT | RSE  | ALT |
                         bindings = <
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
    &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp BSPC &kp SQT
    &kp LSHFT &kp LCTRL &kp Z &kp X &kp C &kp V   &kp B &kp N  &kp M &kp TAB &kp RIGHT &kp ESC
-                  &kp LSHFT &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
+                  &kp LSHFT &mo 1 &kp SPACE   &lt 3 RET &mo 2 &kp RALT
                         >;
                 };
                 lower_layer {

@@ -2,6 +2,7 @@
  * Copyright (c) 2020 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
+ *MODIFIED BY NARA_JUNG, 4/26/2023. KEYMAP FOR CHOCOFI, CORNE WITHOUT A COLUMN ON EACH SPLIT
  */
 
 #include <behaviors.dtsi>

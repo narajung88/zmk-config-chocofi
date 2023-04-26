@@ -1,4 +1,3 @@
-@@ -2,6 +2,7 @@
  * Copyright (c) 2020 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
@@ -32,8 +31,8 @@
 //                    | SHIFT | NULL | SPC |   | ENT | NULL  | ALT |
                         bindings = <
    &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &kp C_MUTE &kp C_VOL_UP &kp GRAVE &kp MINUS &kp EQUAL &kp SEMI   &kp APOS &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &trans
-   &kp LSHFT  &trans       &kp C_VOL_DN     &kp LBKT    &kp RBKT    &kp BSLH         &kp COMMA   &kp DOT   &kp SLASH &trans &bt BT_CLR &trans
+   &bt BT_CLR &kp C_MUTE &kp C_VOL_UP &kp GRAVE &kp MINUS &kp EQUAL &kp SEMI   &kp APOS &trans &trans &trans &trans
+   &kp LSHFT  &trans       &kp C_VOL_DN     &kp LBKT    &kp RBKT    &kp BSLH         &kp COMMA   &kp DOT   &kp SLASH &trans    &trans &trans
                                     &kp LSHFT &trans &kp SPACE   &kp RET &trans &kp RALT
                         >;
                 };

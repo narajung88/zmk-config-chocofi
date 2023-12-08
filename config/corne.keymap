@@ -17,9 +17,8 @@ conditional_layers {
             then-layer = <3>;
         };
     };
-        keymap {
-                compatible = "zmk,keymap";
- macros {
+
+macros {
         screenshot: screenshot {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -30,6 +29,9 @@ conditional_layers {
                 ;
         };
     };
+
+        keymap {
+                compatible = "zmk,keymap";
 
                 default_layer {
 // -----------------------------------------------------------------------------------------

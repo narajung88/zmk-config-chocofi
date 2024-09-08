@@ -28,6 +28,28 @@ macros {
                 , <&macro_release &kp LWIN &kp LSHFT>
                 ;
         };
+
+        hibernate: hibernate {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LWIN>
+                , <&macro_tap &kp X>
+                , <&macro_release &kp LWIN>
+                , <&macro_tap &kp U>
+                , <&macro_tap &kp H>
+                ;
+        };
+
+        volmix: volmix {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LWIN &kp LCTRL>
+                , <&macro_tap &kp V>
+                , <&macro_release &kp LWIN &kp LCTRL>
+                ;
+        };
     };
 
         keymap {
@@ -54,9 +76,9 @@ macros {
 //                    | SHIFT | NULL | SPC |   | ENT | NULL  | ALT |
                         bindings = <
    &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &trans &kp C_MUTE &kp C_VOL_UP &kp GRAVE &kp MINUS &kp EQUAL &kp SEMI   &kp APOS &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &trans
+   &trans &kp C_MUTE &kp C_VOL_UP &kp GRAVE &kp MINUS &kp EQUAL &kp SEMI   &kp APOS &bt BT_SEL 0 &bt BT_SEL 1 &volmix &trans
    &trans  &kp ESC       &kp C_VOL_DN     &kp LBKT    &kp RBKT    &kp BSLH         &kp COMMA   &kp DOT   &kp SLASH &kp LWIN &screenshot &trans
-                                    &kp LSHFT &trans &kp SPACE   &kp RET &trans &kp RALT
+                                    &kp LSHFT &trans &kp SPACE   &kp RET &trans &hibernate
                         >;
                 };
 
